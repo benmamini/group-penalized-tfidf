@@ -7,8 +7,8 @@ library(textstem)
 library(Matrix)
 
 
-data1 <- read.csv("C:/Users/benma/Dropbox/Ben_thesis_research/Conferences/CPA2025/Fall 2025/Question 6.csv")
-data2 <- read.csv("C:/Users/benma/Dropbox/Ben_thesis_research/Conferences/CPA2025/Fall 2025/Question 8.csv")
+data1 <- read.csv("path")
+data2 <- read.csv("path")
 data <-rbind(data1, data2)
 View(custom_tfidf(data$Utterance, data$Question))
 View(data)
@@ -74,3 +74,4 @@ custom_tfidf <- function(
   
   return(as(tfidf_dfm, "dgCMatrix"))
 }
+
