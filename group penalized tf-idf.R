@@ -7,12 +7,6 @@ library(textstem)
 library(Matrix)
 
 
-data1 <- read.csv("path")
-data2 <- read.csv("path")
-data <-rbind(data1, data2)
-View(custom_tfidf(data$Utterance, data$Question))
-View(data)
-
 
 custom_tfidf <- function(
     texts,
@@ -41,7 +35,7 @@ custom_tfidf <- function(
   # Create DFM
   dfm <- quanteda::dfm(toks)
   
- 
+  
   quanteda::docvars(dfm, "item") <- item_id
   
   # Trim infrequent terms
@@ -74,4 +68,3 @@ custom_tfidf <- function(
   
   return(as(tfidf_dfm, "dgCMatrix"))
 }
-
